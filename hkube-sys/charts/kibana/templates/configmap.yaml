@@ -1,0 +1,16 @@
+{{- if .Values.kibanaConfig }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "kibana.fullname" . }}-config
+  namespace: {{ .Values.NameSpace }}
+  labels:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name | quote }}
+data:
+{{- range $path, $config := .Values.kibanaConfig }}
+  {{ $path }}: |
+{{ $config | indent 4 -}}
+{{- end -}}
+{{- end -}}

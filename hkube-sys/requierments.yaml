@@ -1,0 +1,25 @@
+dependencies:
+  - name: data
+    version: "7.5.1"
+    repository: file://./charts/elasticsearch/charts/data
+  - name: master
+    version: "7.5.1"
+    repository: file://./charts/elasticsearch/charts/master
+  - name: ingest
+    version: "7.5.1"
+    repository: file://./charts/elasticsearch/charts/ingest
+  - name: fluentd-elasticsearch
+    version: "v2.3.2"
+    repository: file://./charts/fluentd-elasticsearch
+  - name: grafana
+    version: "6.2.5"
+    repository: file://./charts/grafana
+  - name: prometheus
+    version: "v0.2.2"
+    repository: file://./charts/prometheus
+  - name: weave-scope
+    version: "1.11.3"
+    repository: file://./charts/weave-scop
+  - name: nginx-ingress
+    version: "1.33.0"
+    repository: file://./charts/nginx-ingress

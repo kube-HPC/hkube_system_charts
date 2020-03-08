@@ -1,0 +1,10 @@
+dependencies:
+  - name: data
+    version: "7.5.1"
+    repository: file://./charts/data
+  - name: master
+    version: "7.5.1"
+    repository: file://./charts/master
+  - name: ingest
+    version: "7.5.1"
+    repository: file://./charts/ingest

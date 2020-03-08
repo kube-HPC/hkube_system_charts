@@ -1,0 +1,9 @@
+{{- if .Values.createnamespace.enabled -}}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: monitoring
+spec:
+  finalizers:
+  - kubernetes
+{{- end }}
