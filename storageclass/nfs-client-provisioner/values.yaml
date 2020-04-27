@@ -13,9 +13,8 @@ image:
   pullPolicy: IfNotPresent
 
 nfs:
-  server: 10.32.10.26
-#  path: /ifs/kubernetes
-  path: /srv/vol_nfs/gkube
+  server: 172.22.0.115
+  path: /nfs/storageclass/gkube
   mountOptions:
 
 # For creating the StorageClass automatically:
