@@ -14,7 +14,7 @@ image:
 
 nfs:
   server: 172.22.0.115
-  path: /nfs/storageclass/gkube
+  path: /nfs/storageclass/cicd
   mountOptions:
 
 # For creating the StorageClass automatically:
