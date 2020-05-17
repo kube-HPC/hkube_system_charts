@@ -23,3 +23,6 @@ dependencies:
   - name: nginx-ingress
     version: "1.33.0"
     repository: file://./charts/nginx-ingress
+  - name: curator
+    version: "2.1.5"
+    repository: file://./charts/elasticsearch-curator
