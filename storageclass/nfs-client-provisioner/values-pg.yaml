@@ -1,0 +1,4 @@
+NameSpace: provisioner
+nfs:
+  server: 172.22.0.115
+  path: /nfs/storageclass/pg
