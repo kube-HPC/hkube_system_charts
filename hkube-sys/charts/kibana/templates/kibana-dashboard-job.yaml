@@ -1,0 +1,34 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "kibana.fullname" . }}-dashboard-config
+  namespace: {{ .Values.NameSpace }}
+  labels:
+    name: kibana-dashboard
+  annotations:
+    "helm.sh/hook": post-install
+    "helm.sh/hook-weight": "-5"
+    #    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      labels:
+        app: kibana-dashboard
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: es-repo-fs
+        image: curlimages/curl:7.70.0
+        command:
+          - "sh"
+          - "-c"
+          - >
+            curl -s  -X POST  http://{{ template "kibana.fullname" . }}:{{ .Values.service.port }}/api/saved_objects/_import -H "kbn-xsrf: true" --form file=@/dashboards/kibana-dashboard.ndjson
+        volumeMounts:
+        - name: kibana-dashboard-fs
+          mountPath: /dashboards
+      volumes:
+        - name: kibana-dashboard-fs
+          configMap:
+            name: kibana-dashboard-cm
+
