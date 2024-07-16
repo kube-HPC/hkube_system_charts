@@ -1,3 +1,4 @@
 pytest==4.1.0
 PyYAML==4.2b4
 ido
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
